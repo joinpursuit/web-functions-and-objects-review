@@ -229,7 +229,6 @@ const celsiusIsBetter = (t) => (t - 32) * 5 / 9
 
 console.log(celsiusIsBetter(212));
 
-/*
 console.log(`## Objects`)
 // ## Question 1.
 console.log(`\n\n\n\n========================================\n## Question 1.\n===============`);
@@ -237,7 +236,12 @@ console.log(`\n
 Write an object that represents a User.  It should have a property for the user's name, email address, and age.
 \n----------------------------------------\n\n`);
 
-
+let user = {
+  name: `Michael`,
+  email: `michaelamparo@pursuit.org`,
+  age: 23,
+}
+console.log(user);
 
 // ## Question 2.
 console.log(`\n\n\n\n========================================\n## Question 2.\n===============`);
@@ -245,7 +249,23 @@ console.log(`\n
 Make 3 different user objects and store them in an array
 \n----------------------------------------\n\n`);
 
-
+let user1 = {
+  name: `Alejo`,
+  email: `alejo@pursuit.org`,
+  age: 23,
+}
+let user2 = {
+  name: `JR`,
+  email: `jungrae@pursuit.org`,
+  age: 18,
+}
+let user3 = {
+  name: `Dessa`,
+  email: `dessa@pursuit.org`,
+  age: 19,
+}
+let userArray = [user1, user2, user3]
+console.log(userArray);
 
 // ## Question 3.
 console.log(`\n\n\n\n========================================\n## Question 3.\n===============`);
@@ -253,7 +273,8 @@ console.log(`\n
 Write a function that takes in an array of User objects, and returns an array with only their email addresses
 \n----------------------------------------\n\n`);
 
-
+const userEmail = (users) => users.map(e => e.email)
+console.log(userEmail(userArray));
 
 // ## Question 4.
 console.log(`\n\n\n\n========================================\n## Question 4.\n===============`);
@@ -261,7 +282,8 @@ console.log(`\n
 Write a function that takes in an array of User objects, and returns the average age of all users. Rounded down.
 \n----------------------------------------\n\n`);
 
-
+const userAgesAvg = (users) => Math.floor(users.reduce((i, e) => i += e.age, 0) / users.length)
+console.log(userAgesAvg(userArray));
 
 // ## Question 5.
 console.log(`\n\n\n\n========================================\n## Question 5.\n===============`);
@@ -269,7 +291,17 @@ console.log(`\n
 Write a function that takes in an array of User objects and returns whether or not all users have an age greater than 18
 \n----------------------------------------\n\n`);
 
+let user4 = {
+  name: `Young Whipper Snapper`,
+  email: `youngsnaps@pursuit.org`,
+  age: 16,
+}
+let userArray2 = [user4, user1, user2, user3]
 
+const user18OrOlder = (users) => users.every(e => e.age >= 18)
+
+console.log(user18OrOlder(userArray));
+console.log(user18OrOlder(userArray2));
 
 // ## Question 6.
 console.log(`\n\n\n\n========================================\n## Question 6.\n===============`);
@@ -277,7 +309,12 @@ console.log(`\n
 Write an object that represents a Recipe.  It should have a property for the recipe's ingredients, name, and how long it will take to make.
 \n----------------------------------------\n\n`);
 
-
+let recipe = {
+  name: `Chimi`,
+  ingredients: [`beef`, `onions`, `pepper`, `seasoning`, `bread`, `mayo`, `ketchup`, `lettuce`, `tomato`],
+  time: 45,
+}
+console.log(recipe);
 
 // ## Question 7.
 console.log(`\n\n\n\n========================================\n## Question 7.\n===============`);
@@ -285,7 +322,18 @@ console.log(`\n
 Make 3 different recipe objects and store them in an array.
 \n----------------------------------------\n\n`);
 
-
+let recipe1 = {
+  name: `Chipotle`,
+  ingredients: [`rice`, `beans`, `chicken`, `sour cream`, `corn`, `cheese`, `lettuce`, `flour tortilla`],
+  time: 30,
+}
+let recipe2 = {
+  name: `Pizza`,
+  ingredients: [`dough`, `marinara`, `cheese`, `garlic powder`, `oregano`, `pepperoni`],
+  time: 20,
+}
+let recipeArray = [recipe, recipe1, recipe2]
+console.log(recipeArray);
 
 // ## Question 8.
 console.log(`\n\n\n\n========================================\n## Question 8.\n===============`);
@@ -293,7 +341,12 @@ console.log(`\n
 Write a function that takes in an array of Recipe objects and returns the recipe that will take the least amount of time to make.
 \n----------------------------------------\n\n`);
 
+const quickEats = (recipe) => {
+  let fastest = recipe.reduce((i, e) => i > e.time ? i = e.time : i, recipe[0].time)
+  for (let e of recipe) if (e.time === fastest) return e
+}
 
+console.log(quickEats(recipeArray));
 
 // ## Question 9.
 console.log(`\n\n\n\n========================================\n## Question 9.\n===============`);
@@ -301,7 +354,8 @@ console.log(`\n
 Write a function that takes in an array of Recipe objects and returns an array containing all the ingredients you need to make all of the recipes.
 \n----------------------------------------\n\n`);
 
-
+const ingredientsOnly = (recipe) => recipe.map(e => e.ingredients).join(`,`).split(`,`)
+console.log(ingredientsOnly(recipeArray));
 
 // ## Bonus
 console.log(`\n\n\n\n========================================\n## Bonus\n===============`);
@@ -309,14 +363,39 @@ console.log(`\n
 Remove duplicate ingredients from the final array
 \n----------------------------------------\n\n`);
 
-
+const ingredientsNoDup = (recipe) => {
+  let recipes = recipe.map(e => e.ingredients).join(`,`).split(`,`)
+  let noDupes = {}
+  let noDupeArr = []
+  for (let e of recipes) noDupes[e] === undefined ? noDupes[e] = 1 : noDupes[e] += 1
+  for (let e in noDupes) noDupeArr.push(e)
+  return noDupeArr
+}
+console.log(ingredientsNoDup(recipeArray));
 
 // ## Question 10
-console.log(`\n\n\n\n========================================\n## Question 10\n===============`);
+console.log(`\n\n\n\n========================================\n## Question 10.\n===============`);
 console.log(`\n
- Write a function that takes in an array of Recipe objects and an array of ingredients and returns all the recipes that you are able to make.
+Write a function that takes in an array of Recipe objects and an array of ingredients and returns all the recipes that you are able to make.
 \n----------------------------------------\n\n`);
 
+let incomplete = [
+           'beef',         'onions',
+         'pepper',           'rice',
+          'beans',        'chicken',
+     'sour cream',           'corn',
+         'cheese', 'flour tortilla',
+          'dough',       'marinara',
+  'garlic powder',        'oregano',
+      'pepperoni'
+]
 
+const whatCanYouMake = (arr, obj) => {
+  let arrObj = {}
+  let wCYM = []
+  for (let e of arr) arrObj[e] = 1
+  for (let i = 0; i < obj.length; i++) if (obj[i].ingredients.every(e => arrObj[e] !== undefined)) wCYM.push(obj[i])
+  return wCYM
+}
 
-*/
+console.log(whatCanYouMake(incomplete, recipeArray));
