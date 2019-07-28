@@ -212,43 +212,65 @@ let multUsers = [
   ]
 
 // 3. Write a function that takes in an array of User objects, and returns an array with only their email addresses
-
-
-  let email = multUsers.map((currentElem)=>{
+let email = multUsers.map((currentElem)=>{
     return {
-      mailing: currentElem.email
+      mailing: currentElem.email // keying into the the value of email
     }
   })
-
 console.log(email)
 
 // 4. Write a function that takes in an array of User objects, and returns the average age of all users. Rounded down.
 // const avgOfAge = (arr) =>{
-//   // let n = arr.length
 //   let sum = 0
 //   for(let i = 0; i < arr.length; i++){
 //     sum+= arr[i]/arr.length
 //   }
 //   return sum
 // }
-// console.log(avgOfAge(multUsers.key(age)))
-//
+
 // // 5. Write a function that takes in an array of User objects and returns whether or not all users have an age greater than 18
-// const above18 = (arr) =>{
-//   return arr.every((currentEl, i, arr)=>{
+// let under18 = multUsers.every((currentEl, i, arr)=>{
 //
 //   })
-// }
-// console.log()
+//
+// console.log(under18)
 
 // 6. Write an object that represents a Recipe.  It should have a property for the recipe's ingredients, name, and how long it will take to make.
-//
+let firstRecipe = {
+  name: 'Chicken Nachos',
+  ingredients: ['Tortilla Chips', 'Cheese', 'Chicken', 'Tomatos', 'Onions', 'Sour Cream', 'Jalapeños', 'Hot Sauce'],
+  minutes: 30
+}
 // 7. Make 3 different recipe objects and store them in an array.
-//
+let recipes = [
+  {
+    name: 'Nachos',
+    ingredients: ['Tortilla Chips', 'Cheese', 'Chicken', 'Tomatos', 'Onions', 'Sour Cream', 'Jalapeños', 'Hot Sauce'],
+    minutes: 30
+  },
+  {
+    name: "Mac n' Cheese",
+    ingredients: ["Macaroni", "Milk", "Breadcrumbs", "Unsalted Butter", "Mustard", "Cheddar Cheese", "Flour", "Salt", "Pepper"],
+    minutes: 90
+  },
+  {
+    name: "Avocado Toast",
+    ingredients: ['Avocado', 'Cilantro', 'Black Pepper', 'Lime', 'Brown Rice Flour', 'Baking Powder', 'Eggs', 'Olive Oil', 'Everything Seasoning'],
+    minutes: 5
+  }
+]
 // 8. Write a function that takes in an array of Recipe objects and returns the recipe that will take the least amount of time to make.
-//
+recipes.filter(recipe =>{
+
+})
 // 9. Write a function that takes in an array of Recipe objects and returns an array containing all the ingredients you need to make all of the recipes.
-//
+
+//Loop through the recipes to get ingredients of all of them
+let allIngredients = []
+recipes.forEach(recipe =>{ // will pass every recipe individually
+allIngredients = allIngredients.concat(recipe.ingredients) // concat joins all ingredients as strings in just ONE array
+})
+console.log(allIngredients)
 // Bonus: Remove duplicate ingredients from the final array
-//
+
 // 10. Write a function that takes in an array of Recipe objects and an array of ingredients and returns all the recipes that you are able to make.
