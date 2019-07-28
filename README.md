@@ -63,10 +63,10 @@ Input: ["HELLO", "THERE", "THESE", "ARE", "SOME", "STRINGS"]
 Output: ["hello", "there", "these", "are", "some", "strings"]
 ```
 
-BONUS: 
+BONUS:
   - A. If you didn't, rewrite this using an array method with a callback
 
-  - B. Make it work even if the array has mixed types inside so that input = `[1, 'HELLO', {one: 'uno'}]` would give output = `['hello']` 
+  - B. Make it work even if the array has mixed types inside so that input = `[1, 'HELLO', {one: 'uno'}]` would give output = `['hello']`
 
 ## 7. Combine strings
 
