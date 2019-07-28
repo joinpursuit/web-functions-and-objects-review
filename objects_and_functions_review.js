@@ -62,7 +62,11 @@ const arrayAvg = (array) => {
   for (let e of array) totalSum += e
   return totalSum / array.length
 }
+
+const arrayAvg2 = (array) => array.reduce((t, e) => t += e) / array.length
+
 console.log(arrayAvg([1,2,3,4,5,10,10]));
+console.log(arrayAvg2([1,2,3,4,5,10,10]));
 
 // ## Question 4.
 console.log(`\n\n\n\n========================================\n## Question 4.\n===============`);
@@ -186,7 +190,6 @@ Bonus: Your function should return 1 or 7 inclusive
 \n----------------------------------------\n\n`);
 
 const nRandomizer = (n) => Math.floor(Math.random() * n) + 1
-
 console.log(nRandomizer(7));
 
 // ## Question 9.
@@ -226,10 +229,9 @@ Output: 100
 \n----------------------------------------\n\n`);
 
 const celsiusIsBetter = (t) => (t - 32) * 5 / 9
-
 console.log(celsiusIsBetter(212));
 
-console.log(`## Objects`)
+console.log(`\n\n\n===============## Objects=============`)
 // ## Question 1.
 console.log(`\n\n\n\n========================================\n## Question 1.\n===============`);
 console.log(`\n
@@ -390,12 +392,19 @@ let incomplete = [
       'pepperoni'
 ]
 
-const whatCanYouMake = (arr, obj) => {
+const whatCanYouMake = (arr, obj) => { // O(n*m)
   let arrObj = {}
   let wCYM = []
-  for (let e of arr) arrObj[e] = 1
+  for (let e of arr) arrObj[e] = 1 // O(n), This turns the array of given ingredients into an object
   for (let i = 0; i < obj.length; i++) if (obj[i].ingredients.every(e => arrObj[e] !== undefined)) wCYM.push(obj[i])
-  return wCYM
+  /* ^^^O(n*m) n-obj.length m-obj.ingredients.length,
+  The for loop(O(n)) goes through all of the objects in the array of recipe objects
+  the if statement looks through the .ingredients array of each obj and
+    uses .every(O(m)) to check  if EVERY element in the array matchs a key in the obj of ingredients given.
+    If they all match then the .every will return true and the if statement will run.
+    When the if statement runs it will push the recipe obj
+  */
+  return wCYM // returns the array of available Recipes
 }
 
 console.log(whatCanYouMake(incomplete, recipeArray));
