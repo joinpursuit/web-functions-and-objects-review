@@ -302,13 +302,13 @@ print(`[
 ]`);
 
 const listAllIngreds = function(recipes) {
-  let ingredientsObj = {};
-  for (let recipe of recipes) {
-    for (let ingredient of recipe.ingredients) {
-      ingredientsObj[ingredient] = true;
+  let xIngredsObj = {};
+  for (let recipeObj of recipes) {
+    for (let ingredient of recipeObj.ingredients) {
+      xIngredsObj[ingredient] = true;
     }
   }
-  return Object.keys(ingredientsObj);
+  return Object.keys(xIngredsObj);
 }
 let result_o9 = listAllIngreds(input_o7);
 print(result_o9, 1);
@@ -324,19 +324,19 @@ print(`Recipes: [
   { name: 'Gin & Tonic', ingredients: ['gin', 'tonic', 'cherry'], time: 4 }
 ]\nWhat can be made with [${ingredsToUse}]?`);
 
-const arePossibleRecipes = function(recipesList, haveTheseIngreds) {
-  let ingredRefObj = {};
-  for (let ingredient of haveTheseIngreds) {
-    ingredRefObj[ingredient] = true;
+const arePossibleRecipes = function(recipesList, askedIngreds) {
+  let askedIngredsObj = {};
+  for (let ingredient of askedIngreds) {
+    askedIngredsObj[ingredient] = true;
   }
-  let outputArr = recipesList.filter( (recipe) => {
+  let outputCanDoArr = recipesList.filter( (recipe) => {
       return (
         recipe.ingredients.every( (ingredNeeded) => {
-            return ingredRefObj[ingredNeeded]
+            return askedIngredsObj[ingredNeeded]
         } )
       );
   } );
-  return outputArr;
+  return outputCanDoArr;
 }
 let result_o10 = arePossibleRecipes(input_o7, ingredsToUse);
 print(result_o10, 1);
