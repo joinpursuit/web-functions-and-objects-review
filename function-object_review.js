@@ -395,9 +395,20 @@ const ingredientList = (arr) => {
   for (let i = 0; i < arr.length; i++){
      ingredientArray.push(arr[i].ingredients)
   }
-  return ingredientArray.concat()
+  let newIngredientList = ingredientArray.map(elem => {
+    return elem.join()
+  })
+  return newIngredientList
 }
 console.log(ingredientList(recipes))
+
+console.log(lineBreak)
 // Bonus: Remove duplicate ingredients from the final array
 //
 // 10. Write a function that takes in an array of Recipe objects and an array of ingredients and returns all the recipes that you are able to make.
+
+let ingredients = ['chicken broth', 'vegetables', 'rice', 'potatoes', 'milk', 'eggs','flour', 'chicken', 'seasoning' ]
+
+const recipesThatCanBeMade = (recipes, arr) => {
+
+}
