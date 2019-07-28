@@ -385,24 +385,52 @@ console.log(fastestRecipe(recipes));
 console.log(`~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n`);
 
 
-/* Write a function that takes in an array of Recipe objects 
+/* 9. Write a function that takes in an array of Recipe objects 
 and returns an array containing all the ingredients you need to make all of the recipes.
 */
 
 console.log(`QUESTION 9 With its Bonus : `);
-const recipeIngrediants = (array) => {
-  let ingrediants = array.map(recipe => {
+const recipeIngredients = (array) => {
+  let ingredients = array.map(recipe => {
     return recipe.ingredients;
   }) 
   
-  let outputIngrediants =[];
-  ingrediants.forEach(array => {
+  let outputIngredients =[];
+  ingredients.forEach(array => {
     for (element of array) {
-      if (!outputIngrediants.includes(element)) {
-        outputIngrediants.push(element);
+      if (!outputIngredients.includes(element)) {
+        outputIngredients.push(element);
       }
     }
   })
-  return outputIngrediants;
+  return outputIngredients;
 }
-console.log(`Ingridiants to make all recipes : `, recipeIngrediants(recipes));
+console.log(`Ingridients to make all recipes : `, recipeIngredients(recipes));
+console.log(`~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n`);
+
+
+/* 10. Write a function that takes in an array of Recipe objects and an array of ingredients 
+and returns all the recipes that you are able to make.
+*/
+
+console.log(`QUESTION 10 : `);
+
+const allPossibleRecipes = (array, target) => {
+    return array.reduce((acc, recipe) => {
+        let pushing = true;
+
+        for (let ingredient of target) {
+            if (!recipe.ingredients.includes(ingredient)){
+                pushing = false;
+            }
+        }
+        if (pushing) {
+            acc += recipe.name + ', ';
+        }
+        return acc
+    }, '')
+}
+
+let arrayOfIngredients = ['a', 'b'];
+console.log(`Recipes possible with`, arrayOfIngredients, ` are :`, allPossibleRecipes(recipes, arrayOfIngredients));
+
