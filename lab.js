@@ -225,18 +225,109 @@ console.log(array2);
 console.log("-----------------------------------------------");
 // 3. Write a function that takes in an array of User objects, and returns an array with only their email addresses
 console.log("Question 3:");
+// for (let i = 0; i < array2.length; i++) {
+//     console.log(array2[i].email);
+// }
+const function3part2 = (inputArray) => {
+    for (let i = 0; i < inputArray.length; i++) {
+        console.log(inputArray[i].email);
+    }
+}
+function3part2(array2);
+console.log("-----------------------------------------------");
 // 4. Write a function that takes in an array of User objects, and returns the average age of all users. Rounded down.
-
+console.log("Question 4:");
+const function4part2 = (inputArray) => {
+    let ageCounter = 0;
+    for (let i = 0; i < array2.length; i++) {
+        ageCounter += (array2[i].age);
+    }
+    console.log(`The average user age is: ${Math.ceil(ageCounter / array2.length)}`);
+}
+function4part2(array2);
+console.log("-----------------------------------------------");
 // 5. Write a function that takes in an array of User objects and returns whether or not all users have an age greater than 18
-
+console.log("Question5:");
+const function5part2 = (inputArray) => {
+    let checkAgeArray = [];
+    let oldInputArraySize = inputArray.length;
+    for(let i = 0; i < inputArray.length; i++) {
+        if(inputArray[i].age > 18) {
+            checkAgeArray.push(inputArray[i])
+        }
+    }
+    if(oldInputArraySize === checkAgeArray.length) {
+        console.log("All the users are older than 18 years old");
+    } else {
+        console.log("Not all the users are above 18 years old")
+    }
+}
+function5part2(array2);
+console.log("-----------------------------------------------");
 // 6. Write an object that represents a Recipe.  It should have a property for the recipe's ingredients, name, and how long it will take to make.
-
+let riceRecipe = {
+    name: "rice",
+    minutesToMake: 30,
+    recipeIngredients: ["rice", "water"]
+}
 // 7. Make 3 different recipe objects and store them in an array.
-
+let curryRecipe = {
+    name: "Curry",
+    minutesToMake: 60,
+    recipeIngredients: ["spices", "water", "meat"]
+}
+let kabobRecipe = {
+    name: "Kabobs",
+    minutesToMake: 75,
+    recipeIngredients: ["spices", "meat", "oil"]
+}
+let parathaRecipe = {
+    name: "paratha",
+    minutesToMake: 20,
+    recipeIngredients:  ["flour", "water"]
+}
+let array7Part2 = [];
+array7Part2.push(curryRecipe, kabobRecipe, parathaRecipe);
 // 8. Write a function that takes in an array of Recipe objects and returns the recipe that will take the least amount of time to make.
-
+const function8Part2 = (inputArray) => {
+    let resultArray = [];
+    resultArray.push(inputArray[0]);
+    for(let i = 1; i < inputArray.length; i++) {
+        if(resultArray[0].minutesToMake > inputArray[i].minutesToMake) {
+            resultArray[0] = inputArray[i]
+        }
+    }
+    console.log(`The recipe that's takes the least time to make is: ${resultArray[0].name}, which only takes ${resultArray[0].minutesToMake} mintues to make`);
+}
+function8Part2(array7Part2);
+console.log("-----------------------------------------------");
 // 9. Write a function that takes in an array of Recipe objects and returns an array containing all the ingredients you need to make all of the recipes.
-
+const function9Part2 = (inputArray) => {
+    let resultArray = [];
+    for(let i = 0; i < inputArray.length; i++) {
+        resultArray.push(inputArray[i].recipeIngredients);
+    }
+    return resultArray;
+}
+function9Part2(array7Part2);
+let quetion9Results = function9Part2(array7Part2);
 // Bonus: Remove duplicate ingredients from the final array
 
 // 10. Write a function that takes in an array of Recipe objects and an array of ingredients and returns all the recipes that you are able to make.
+console.log("Question 10:");
+const function10Part2 = (inputArray, ingredientsArray) => {
+    let resultArray = [];
+    for(let i = 0; i < inputArray.length; i++) {
+        for(let j = 0; j < ingredientsArray.length; j++) {
+            if(inputArray[i].recipeIngredients === ingredientsArray[j]) {
+                resultArray.push(inputArray[i].name);
+            }
+        }
+    }
+    let resultString = "You can make: ";
+    for(let i = 0; i < resultArray.length; i++) {
+        resultString += (resultArray[i] + ", ")
+    }
+    console.log(resultString);
+}   
+function10Part2(array7Part2, quetion9Results); //first paramater is array of recipe objects
