@@ -357,11 +357,12 @@ console.log('Question 10');
 console.log(' ');
 
 //10. Write a function that takes in an array of Recipe objects and an array of ingredients and returns all the recipes that you are able to make.
-let whatIGot = ['apples', 'pears', 'Cheese', 'Bread', 'beer', 'Milk', 'Tuna', 'Dry Bread', 'Eggs'];
+let whatIGot = ['apples', 'pears', 'Cheese', 'Bread', 'beer', 'Milk', 'Tuna', 'Eggs', 'Dry Bread'];
 
 const compareIngredients = (array, array2) => {
   let whatIFound = [];
   let recipesICanMake = [];
+  let counter = 0;
 
   for (let key in array2) {
     for (let i = 0; i < array.length; i++) {
@@ -369,18 +370,23 @@ const compareIngredients = (array, array2) => {
         whatIFound.push(array[i]);
       }
     }
+
     for (let i = 0; i < whatIFound.length; i++) {
       if (array2[key]['ingredients'].indexOf(whatIFound[i]) > -1) {
-        recipesICanMake.push(array2[key]['name']);
-        whatIFound = [];
+        counter++;
       }
     }
+
+    if (array2[key]['ingredients'].length === counter) {
+      recipesICanMake.push(array2[key]['name']);
+    }
+
+    whatIFound = [];
+    counter = 0;
   }
+
   return recipesICanMake;
 };
 
-
-// console.log(recipes[1]['ingredients'].indexOf(whatIGot[3]));
-
-
 console.log(compareIngredients(whatIGot, recipes));
+// console.log(recipes[1]['ingredients'].indexOf(whatIGot[3]));
