@@ -375,15 +375,63 @@ const areYouOldEnough = (users) => {
 
 console.log(areYouOldEnough(users))
 
-
+console.log(" ")
 // 6. Write an object that represents a Recipe.  It should have a property for the recipe's ingredients, name, and how long it will take to make.
-//
+console.log("---------- Objects #6, #7 [INVISIBLE] ----------")
+
+
+let recipes = [
+  {
+    name: "Cheeseburger Tomatoes",
+    ingredients: ["Ground Beef", "Yellow Onion", "Garlic", "Cheddar Cheese", "Pickles", "Lettuce", "Ketchup", "Mustard", "Salt", "Pepper"],
+    minutes: 30
+  },
+  {
+    name: "Mac n' Cheese",
+    ingredients: ["Macaroni", "Milk", "Bacon", "Breadcrumbs", "Unsalted Butter", "Mustard", "Cheddar Cheese", "Flour", "Salt", "Pepper"],
+    minutes: 90
+  },
+  {
+    name: "Tomato Sauce",
+    ingredients: ["Garlic", "Yellow Onion", "Red Pepper Flakes", "Oregano", "Tomato Paste", "San Marzano Tomatoes", "Basil", "Unsalted Butter", "Salt", "Pepper"],
+    minutes: 120
+  }
+]
+
+console.log(" ")
 // 7. Make 3 different recipe objects and store them in an array.
-//
+// SEE ABOVE!
 // 8. Write a function that takes in an array of Recipe objects and returns the recipe that will take the least amount of time to make.
-//
+console.log("---------- Objects #8 ----------")
+
+let fastestRecipe = recipes.filter(recipe => {
+  let result = []
+  if (result < recipes.minutes) {
+    result.push(recipe)
+  } else if (recipes.minutes > result) {
+    result.pop()
+  }
+  return result
+})
+
+console.log(fastestRecipe)
+
+console.log(" ")
+
 // 9. Write a function that takes in an array of Recipe objects and returns an array containing all the ingredients you need to make all of the recipes.
-//
+console.log("---------- Objects #9 ----------")
+
+
+let allIngredients = recipes.filter(recipe => {
+  let result = []
+  result.push(recipes.ingredients)
+  return result
+})
+
+console.log(allIngredients)
+
+console.log()
+
 // Bonus: Remove duplicate ingredients from the final array
 //
 // 10. Write a function that takes in an array of Recipe objects and an array of ingredients and returns all the recipes that you are able to make.
