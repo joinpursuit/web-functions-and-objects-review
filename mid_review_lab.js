@@ -306,7 +306,7 @@ let recipes = [
     time: 5,
   },
   {
-    ingredients: ['Chicken Thighs', 'Spices', 'Oil'],
+    ingredients: ['Chicken Thighs', 'Spices', 'Oil', 'Dry Bread'],
     name: 'Cripsy Chicken Thighs',
     time: 40,
   },
@@ -347,7 +347,7 @@ const recipeIngredientsNeeded = (array) => {
         newArray.push(el['ingredients'][i]);
       }
     });
-    return newArray;
+    return newArray.filter((item, index) => newArray.indexOf(item) === index);
   };
 
 console.log(recipeIngredientsNeeded(recipes));
@@ -360,7 +360,6 @@ console.log(' ');
 let whatIGot = ['apples', 'pears', 'Cheese', 'Bread', 'beer', 'Milk', 'Tuna', 'Dry Bread', 'Eggs'];
 
 const compareIngredients = (array, array2) => {
-  let isTrue = false;
   let whatIFound = [];
   let recipesICanMake = [];
 
