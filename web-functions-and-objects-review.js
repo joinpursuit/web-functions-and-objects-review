@@ -251,34 +251,110 @@ console.log('');
 
 // 4. Write a function that takes in an array of User objects, and returns the average age of all users. Rounded down.
 console.log('----- Objects: Question 4 -----');
-let ageAverage = users.reduce((total, currentValue) => {
-  let total = return total + currentValue;
+let ages = [];
+for (let i = 0; i < users.length; i++) {
+  ages.push(users[i].age);
+}
+let sum4 = ages.reduce((total, currentValue) => {
+  return total + currentValue;
 });
-let total3 = (sum3 / (arr3.length));
-console.log('')
+let total4 = sum4 / ages.length;
+console.log(total4);
+console.log(ages)
+console.log('');
 
 // 5. Write a function that takes in an array of User objects and returns whether or not all users have an age greater than 18
 console.log('----- Objects: Question 5 -----');
-console.log('')
+let above18 = ages.every(currentValue => {
+  if (currentValue > 18) {
+    return true;
+  }
+  return false;
+});
+console.log(`Are all the users above the age of 18?: ${above18}`)
+console.log('');
 
 // 6. Write an object that represents a Recipe.  It should have a property for the recipe's ingredients, name, and how long it will take to make.
 console.log('----- Objects: Question 6 -----');
-console.log('')
+let recipes = [
+  {
+    name: 'Cheeseburger',
+    ingredients: ['Ground Beef', 'Yellow Onion', 'Garlic', 'Cheddar Cheese', 'Pickles', 'Lettuce', 'Ketchup', 'Mustard', 'Salt', 'Pepper'],
+    minutes: 30
+  },
+  {
+    name: 'Mac n\' Cheese',
+    ingredients: ['Macaroni', 'Milk', 'Bacon', 'Breadcrumbs', 'Unsalted Butter', 'Cheddar Cheese', 'Flour', 'Salt', 'Pepper'],
+    minutes: 90
+  },
+  {
+    name: 'Tomato Sauce',
+    ingredients: ['Garlic', 'Yellow Onion', 'Red Pepper Flakes', 'Oregano', 'Tomato Paste', 'San Marzano Tomatoes', 'Basil', 'Unsalted Butter', 'Salt', 'Pepper'],
+    minutes: 120
+  }
+];
+console.log('');
 
 // 7. Make 3 different recipe objects and store them in an array.
 console.log('----- Objects: Question 7 -----');
-console.log('')
+console.log('');
 
 // 8. Write a function that takes in an array of Recipe objects and returns the recipe that will take the least amount of time to make.
 console.log('----- Objects: Question 8 -----');
-console.log('')
+console.log('');
 
-// 9. Write a function that takes in an array of Recipe objects and returns an array containing all the ingredients you need to make all of the recipes.
+// 9. Write a function that takes in an array of Recipe objects and
+//returns an array containing all the ingredients you need to make all of the recipes.
 console.log('----- Objects: Question 9 -----');
-console.log('')
+const getAllIngredients = (recipes) =>{
+//put all ingredients code in here
+}
+
+let allIngredients = [];
+ recipes.forEach((recipe) => {
+  allIngredients = allIngredients.concat(recipe.ingredients);
+});
+console.log(allIngredients)
+console.log('');
 
 // Bonus: Remove duplicate ingredients from the final array
-//
+console.log('----- Objects: Question 9 (Bonus) -----');
+let uniqueIngredients =[];
+for (let ingredient of allIngredients) {
+  // if(!uniqueIngredients.includes(currenfIngrediant)    same as below
+    if (uniqueIngredients.includes(ingredient) === false) {
+        uniqueIngredients.push(ingredient)
+  }
+}
+console.log(uniqueIngredients);
+console.log('')
 // 10. Write a function that takes in an array of Recipe objects and an array of ingredients and returns all the recipes that you are able to make.
 console.log('----- Objects: Question 10 -----');
-console.log('')
+//helper Functions
+
+const doIHaveAllIngredients = (recipe, allIngredients) => {
+  return recipe.ingredients.every(currentIngredient => {
+    return allIngredients.includes(currentIngredient)
+  })
+};
+
+//recipes[0].ingredients.push('Potato');    //check to see you infact get false for this
+let result = doIHaveAllIngredients(recipes[0], allIngredients);
+console.log(result);
+
+
+const checkMyIngredients = (recipes, ingredients) => {
+let filteredRecipes = recipes.filter(recipe => {
+  if (doIHaveAllIngredients(recipe,ingredients)) {
+    return true
+  } else {
+    return false
+  }
+})
+return filteredRecipes;
+}
+
+allIngredients.pop();
+let answer = checkMyIngredients(recipes, allIngredients);
+console.log(answer);
+console.log('');
