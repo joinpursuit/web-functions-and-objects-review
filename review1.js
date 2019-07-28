@@ -141,7 +141,7 @@ for (let i = 0; i < user3.length; i++) {
 
 console.log('****************QUESTION5***************');
 let objectresult5 = user3.every(el => {
-    if (el < 1 === user3) {
+    if (el < 18 === user3) {
       return true;
     }
 
