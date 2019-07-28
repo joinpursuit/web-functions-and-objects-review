@@ -235,9 +235,36 @@ console.log(`\n 9.Write a function that takes in an array of Recipe objects and 
 `);
 
 const recip =( recipesArr) =>{
-  return recipesArr.map(el => 
-    el.ingredients
+  let all =[];
+  /*
+  Total tim complexity is O(n * m). Where n is the length of the recipes array
+  and m is the length of the longest array of ingredients
+  */
+  recipesArr.forEach(el => 
+    all = all.concat(el.ingredients)
   )
+  /*
+  3 recipes
+  3 ingredients per recipe
+  (n * m) => (3 * 3) => 9 //  all
+  */
+
+  let uniqueIngredients =[];
+for (let currIngredients of all){ // O(x) => O(n * m)
+  //O(n * m)
+  if (!uniqueIngredients.includes(currIngredients)){
+    uniqueIngredients.push(currIngredients);
+  }
+//0(x^2)
+
+}
+// return = all.reduce((acc,curel) => {
+//   if (!acc.includes(curel)){
+//     acc.push(curel)
+//   }
+//   return acc
+// }, [])
+return uniqueIngredients;
 }
 console.log(recip(recipes));
 
@@ -252,23 +279,20 @@ let ingredients =[ 'beacon', 'pepper','flour','garlic',
 
 // console.log(Object.values(ingredients));
 
-/*
-const makers =( ingredientsArr, recipeObj) => {
-  // return recipeObj.map(el => {
-  //   if (ingredientsArr.every(elem => elem === el.ingredientsArr )){
-  //     return el.ingredients
-  //   } else {
-  //     return el
-  //   }
-  // })
-  let empty =[];
-  for (let j= 0;j <recipeObj.length;j++){
-    if(recipeObj[j].ingredients.every(el => el === ingredientsArr[el]) ){
-      empty.push(recipeObj[j])
-    }
-  }
-  return empty
-  
+const doIHaveAllIngredients = (recipe,ingredients) =>{
+  return recipe.ingredients.every(elemIng => ingredients.includes(elemIng));
 }
-console.log(makers(ingredients,recipes));
-*/
+
+console.log(doIHaveAllIngredients(recipes,ingredients));
+
+const makers =( ingredientsArr, recipeObj) => {
+  let filteredRecipes = recipes.filter ( recipe => {
+    if (doIHaveAllIngredients(recipe,ingredients)){
+      return true
+    } else {
+      return false
+    }
+  })
+return filteredRecipes;
+}
+// console.log(makers(ingredients,recipes));
