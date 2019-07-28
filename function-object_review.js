@@ -407,8 +407,8 @@ console.log(lineBreak)
 //
 // 10. Write a function that takes in an array of Recipe objects and an array of ingredients and returns all the recipes that you are able to make.
 
-let ingredients = ['chicken broth', 'vegetables', 'rice', 'potatoes', 'milk', 'eggs','flour', 'chicken', 'seasoning' ]
-
-const recipesThatCanBeMade = (recipes, arr) => {
-
-}
+// let ingredients = ['chicken broth', 'vegetables', 'rice', 'potatoes', 'milk', 'eggs','flour', 'chicken', 'seasoning' ]
+//
+// const recipesThatCanBeMade = (recipes, arr) => {
+//
+// }
