@@ -243,5 +243,32 @@ console.log(recip(recipes));
 
 // Bonus: Remove duplicate ingredients from the final array
 
-// 10. Write a function that takes in an array of Recipe objects and an array of ingredients and returns all the recipes that you are able to make.
-let ingredients =[ 'beacon', 'pepper','flour',]
+console.log(`\n10.Write a function that takes in an array of Recipe objects and an array of ingredients and returns all the recipes that you are able to make.`);
+let ingredients =[ 'beacon', 'pepper','flour','garlic',
+'oliver oil', 'salt','cayenne pepper',
+'tomato sauce', 'red wine vinegar','basil','butter', 
+'white wine','parsley','green onion',
+'lemon','cod','round crackers']
+
+// console.log(Object.values(ingredients));
+
+/*
+const makers =( ingredientsArr, recipeObj) => {
+  // return recipeObj.map(el => {
+  //   if (ingredientsArr.every(elem => elem === el.ingredientsArr )){
+  //     return el.ingredients
+  //   } else {
+  //     return el
+  //   }
+  // })
+  let empty =[];
+  for (let j= 0;j <recipeObj.length;j++){
+    if(recipeObj[j].ingredients.every(el => el === ingredientsArr[el]) ){
+      empty.push(recipeObj[j])
+    }
+  }
+  return empty
+  
+}
+console.log(makers(ingredients,recipes));
+*/
