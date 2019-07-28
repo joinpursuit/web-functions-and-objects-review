@@ -179,25 +179,150 @@ const fahrToCel = (fahrenheit) => (fahrenheit - 32) * (5/9);
 console.log("10) ", fahrToCel(temp), "Constant");
 
 // ## Objects
-
+console.log("<- - - - - - - - - - Objects - - - - - - - - - - ->")
 // 1. Write an object that represents a User.  It should have a property for the user's name, email address, and age.
-
+let user = {
+    name: "Steve Jobs",
+    email: "stevejobs@microsoft.com",
+    age: 20
+};
+console.log("1) ", user);
 // 2. Make 3 different user objects and store them in an array
-
+let userArr = [
+    {
+        user: "Donald",
+        email: "donald@trump.com",
+        age: 50
+    },{
+        user: "J",
+        email: "j@trump.com",
+        age: 80
+    },{
+        user: "Trump",
+        email: "trump@trump.com",
+        age: 65
+    }
+];
+console.log("2) ", userArr);
 // 3. Write a function that takes in an array of User objects, and returns an array with only their email addresses
-
+const userEmailFromArr = (arr) => arr.map( ele => ele["email"]);
+console.log("3) ", userEmailFromArr(userArr));
 // 4. Write a function that takes in an array of User objects, and returns the average age of all users. Rounded down.
-
+const avgUserAge = (arr) => arr.reduce( (acc, num) => acc + num["age"], 0) / arr.length;
+console.log("4) ", avgUserAge(userArr));
 // 5. Write a function that takes in an array of User objects and returns whether or not all users have an age greater than 18
-
+const userAgeCheck = (arr) => arr.every(num => num["age"] > 18);
+console.log("5) ", userAgeCheck(userArr));
 // 6. Write an object that represents a Recipe.  It should have a property for the recipe's ingredients, name, and how long it will take to make.
-
+const recipe = {
+    ingredients: "water",
+    name: "water",
+    time: 1
+}
 // 7. Make 3 different recipe objects and store them in an array.
+const recipeObj = [
+    {
+        name: "taco",
+        ingredients: ["cheese", "beef"],
+        time: 15
+    },{
+        name: "pizza",
+        ingredients: ["cheese", "tomato", "dough"],
+        time: 45
+    },{
+        name: "burger",
+        ingredients: ["cheese", "tomato", "beef", "bread"],
+        time: 20
+    },
+    {
+        name: "burger",
+        ingredients: ["tomato", "beef", "bread"],
+        time: 20
+    },
 
+]
 // 8. Write a function that takes in an array of Recipe objects and returns the recipe that will take the least amount of time to make.
-
-// 9. Write a function that takes in an array of Recipe objects and returns an array containing all the ingredients you need to make all of the recipes.
-
+const recipeLeastTime = (arr) => {
+    let min = Infinity;
+    let returnMe;
+    for (let obj of arr) {
+        if (obj.time < min) {
+            min = obj.time;
+            returnMe = obj;
+        }
+    }
+    return returnMe;
+}
+console.log("8) ", recipeLeastTime(recipeObj));
+// 9. Write a function that takes in an array of Recipe objects and returns an array containing all the 
+// ingredients you need to make all of the recipes.
+const allIngredients = (arr) => {
+    let returnMe = [];
+    let noDupes = [];
+    for (let obj of arr) {
+        returnMe = returnMe.concat(obj["ingredients"]);
+    }
+    for (let str of returnMe) {
+        if (!noDupes.includes(str)) {
+            noDupes.push(str);
+        }
+    }
+    return noDupes;
+}
+console.log("9) ", allIngredients(recipeObj));
 // Bonus: Remove duplicate ingredients from the final array
 
-// 10. Write a function that takes in an array of Recipe objects and an array of ingredients and returns all the recipes that you are able to make.
+// 10. Write a function that takes in an array of Recipe objects and an array of ingredients and returns all the 
+// recipes that you are able to make.
+let ingredients = ["cheese", "tomato", "dough", "beef"];
+
+const allRecipes = (rec, ing) => {
+    let ingObj = {};
+    let result = [];
+    for (let key of ing) {
+        ingObj[key] = 1;
+    }
+    for (let i = 0; i < rec.length; i++) {
+        for (let key in ingObj) {
+            let curObj = rec[i]["ingredients"];
+            if (curObj.every(item => ingObj[item] !== undefined)) {
+                result.push(rec[i]);
+                break;
+            }
+        }
+    }
+    return result;
+}
+
+console.log("10) ", allRecipes(recipeObj, ingredients));
+
+// let testObj = [
+//     {
+//         ing: ["a","b"]
+//     },
+//     {
+//         ing: ["a"]
+//     }
+// ]
+
+// let check = ["a", "b"];
+
+// function call(obj, check) {
+//     let outObj = {};
+//     let outArr = [];
+//     for(let key of check) {
+//         outObj[key] = 1;
+//     }
+//     console.log(outObj);
+//     for(let i = 0; i < obj.length; i++) {
+//         for(let key in outObj) {
+//             console.log(obj[0].ing)
+//             if(obj[i].ing.every(item => outObj[item] !== undefined)) {
+//                 outArr.push(obj[i]);
+//                 break
+//             }
+//         }
+//     }
+//     return outArr;
+// }
+// console.log(call(testObj, check));
