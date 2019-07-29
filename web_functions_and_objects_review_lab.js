@@ -3,13 +3,11 @@
 
 
 
-// global function declarations
+// non-question-specific function declarations
 const print = function(forDisplay, bool) {
-  if (bool) { // for outputs
-    console.log(forDisplay,'\n');
-  } else { // for inputs
-    console.log(`Input: ${forDisplay}`);
-  }
+  bool
+    ? console.log(forDisplay,'\n') // for outputs
+    : console.log(`Input: ${forDisplay}`); // for inputs
 }
 
 
@@ -53,11 +51,11 @@ let input_f3 = [1,2,3,4,5,10,10];
 print(`[${input_f3}]`);
 
 const averageAnArray = function(input_Arr) {
-  let sum = 0;
+  let outputSum = 0;
   for (let i of input_Arr) {
-    sum += i;
+    outputSum += i;
   }
-  return sum / input_Arr.length;
+  return outputSum / input_Arr.length;
 }
 let result_f3 = averageAnArray(input_f3);
 print(result_f3, 1);
@@ -82,10 +80,10 @@ console.log("f5 // Write a function that checks to see whether every number in a
 let input_f5 = [4,3,2,-4];
 print(`[${input_f5}]`);
 
-const isAllPositive = function(input_Arr) {
+const areAllPositive = function(input_Arr) {
   return input_Arr.every( el => el > 0 );
 }
-let result_f5 = isAllPositive(input_f5);
+let result_f5 = areAllPositive(input_f5);
 print(result_f5, 1);
 //
 
@@ -96,10 +94,8 @@ let input_f6 = [1, 'HELLO', {one: "uno"}, "THERE", "THESE", "ARE", "SOME", "STRI
 print(`[1, 'HELLO', {one: "uno"}, "THERE", "THESE", "ARE", "SOME", "STRINGS"]`);
 
 const lowerTheStrings = (input_Arr) => {
-  let outputArray = [];
-  let transArray = input_Arr.filter( el => typeof el === 'string' );
-  transArray.forEach( el => outputArray.push(el.toLowerCase()) );
-  return outputArray;
+  return input_Arr.filter( el => typeof el === 'string' )
+    .map( el => el.toLowerCase() );
 }
 let result_f6 = lowerTheStrings(input_f6);
 print(result_f6, 1);
@@ -139,11 +135,9 @@ let input_f9 = [3,-4,0,5,-6];
 print(`[${input_f9}]`)
 
 const sumTheAbsolutes = function(input_Arr) {
-  let sum = 0;
-  for (let el of input_Arr) {
-    sum += Math.abs(el);
-  }
-  return sum;
+  return input_Arr.reduce( (outputSum, num) => {
+    return outputSum += Math.abs(num);
+  }, 0);
 }
 let result_f9 = sumTheAbsolutes(input_f9);
 print(result_f9, 1);
@@ -155,8 +149,8 @@ console.log("f10 // Write a function that converts a temperature in Fahrenheit t
 let input_f10 = 212;
 print(input_f10);
 
-const toCelsius = function(input_Farenheit) {
-  return (input_Farenheit - 32) * 5 / 9;
+const toCelsius = function(fahrTemp) {
+  return (fahrTemp - 32) * 5 / 9;
 }
 let result_f10 = toCelsius(input_f10);
 print(result_f10, 1);//
@@ -195,20 +189,21 @@ print(`[
   { name: 'Anna Marie', email: 'rogue@xmen.org', age: 29 }
 ]`);
 
-const toEmailArray = function(users) {
+const makeEmailsArray = function(users) {
   let outputArray = [];
   for (let userObj of users) {
     outputArray.push(userObj.email);
   }
   return outputArray;
 }
-let result_o3 = toEmailArray(input_o2);
+let result_o3 = makeEmailsArray(input_o2);
 print(result_o3, 1);
 //
 
 
 // o4 //
-console.log("o4 // Write a function that takes in an array of User objects, and returns the average age of all users. Rounded down.");
+console.log("o4 // Write a function that takes in an array of User objects, and returns the average age of all users.");
+console.log("Rounded down.");
 print(`[
   { name: 'James Howlett', email: 'wolverine@xmen.org', age: 197 },
   { name: 'Remy Etienne LeBeau', email: 'gambit@xmen.org', age: 27 },
@@ -216,14 +211,12 @@ print(`[
 ]`);
 
 const getAvgAge = function(users) {
-  // // METHOD 1, using array.reduce()
-  return Math.floor((
+  return Math.floor((       // // METHOD 1, using array.reduce()
     users.reduce( (userAcc, userCurr) => {
         return userAcc += userCurr.age;
     }, 0)
   ) / users.length);
-  // // METHOD 2, using for loop
-  // let sumAges = 0;
+  // let sumAges = 0;       // // METHOD 2, using for loop
   //   for (let userObj of users) {
   //     sumAges += userObj.age;
   //   }
@@ -235,7 +228,8 @@ print(result_o4, 1);
 
 
 // o5 //
-console.log("o5 // Write a function that takes in an array of User objects and returns whether or not all users have an age greater than 18");
+console.log("o5 // Write a function that takes in an array of User objects and returns whether or not all users have");
+console.log("an age greater than 18");
 print(`[
   { name: 'James Howlett', email: 'wolverine@xmen.org', age: 197 },
   { name: 'Remy Etienne LeBeau', email: 'gambit@xmen.org', age: 27 },
@@ -251,7 +245,8 @@ print(result_o5, 1);
 
 
 // o6 //
-console.log("o6 // Write an object that represents a Recipe.  It should have a property for the recipe's ingredients, name, and how long it will take to make.");
+console.log("o6 // Write an object that represents a Recipe.  It should have a property for the recipe's ingredients, name, and");
+console.log("how long it will take to make.");
 let input_o6 = { name: 'Whiskey Sour', ingredients: ['whiskey', 'sour mix', 'cherry'], time: 2 };
 print(`{ name: 'Whiskey Sour', ingredients: ['whiskey', 'sour mix', 'cherry'], time: 2 }`, 1);
 
@@ -271,7 +266,8 @@ print(`[
 
 
 // o8 //
-console.log("o8 // Write a function that takes in an array of Recipe objects and returns the recipe that will take the least amount of time to make.");
+console.log("o8 // Write a function that takes in an array of Recipe objects and returns the recipe that will take");
+console.log("the least amount of time to make.");
 print(`[
   { name: 'Whiskey Sour', ingredients: ['whiskey', 'sour mix', 'cherry'], time: 3 },
   { name: 'Whiskey Straight', ingredients: ['whiskey'], time: 1 },
@@ -279,14 +275,12 @@ print(`[
 ]`);
 
 const findQuickestRecipe = (recipes) => {
-  return (
-    recipes.reduce( (recipeAcc, recipeCurr) => {
-        if (recipeCurr.time < recipeAcc.time) {
-          return recipeCurr
-        }
-        return recipeAcc
-    } )
-  );
+  return recipes.reduce( (recipeAcc, recipeCurr) => {
+      if (recipeCurr.time < recipeAcc.time) {
+        return recipeCurr
+      }
+      return recipeAcc
+  } );
 }
 let result_o8 = findQuickestRecipe(input_o7);
 print(result_o8, 1);
@@ -294,7 +288,8 @@ print(result_o8, 1);
 
 
 // o9 //
-console.log("o9 // Write a function that takes in an array of Recipe objects and returns an array containing all the ingredients you need to make all of the recipes.");
+console.log("o9 // Write a function that takes in an array of Recipe objects and returns an array containing");
+console.log("all the ingredients you need to make all of the recipes.");
 print(`[
   { name: 'Whiskey Sour', ingredients: ['whiskey', 'sour mix', 'cherry'], time: 3 },
   { name: 'Whiskey Straight', ingredients: ['whiskey'], time: 1 },
@@ -316,7 +311,8 @@ print(result_o9, 1);
 
 
 // o10 //
-console.log("o10 // Write a function that takes in an array of Recipe objects and an array of ingredients and returns all the recipes that you are able to make.");
+console.log("o10 // Write a function that takes in an array of Recipe objects and an array of ingredients and");
+console.log("returns all the recipes that you are able to make.");
 let ingredsToUse = ['cherry', 'whiskey', 'sour mix'];
 print(`Recipes: [
   { name: 'Whiskey Sour', ingredients: ['whiskey', 'sour mix', 'cherry'], time: 3 },
@@ -329,14 +325,11 @@ const arePossibleRecipes = function(recipesList, askedIngreds) {
   for (let ingredient of askedIngreds) {
     askedIngredsObj[ingredient] = true;
   }
-  let outputCanDoArr = recipesList.filter( (recipe) => {
-      return (
-        recipe.ingredients.every( (ingredNeeded) => {
-            return askedIngredsObj[ingredNeeded]
-        } )
-      );
+  return recipesList.filter( (recipe) => {
+      return recipe.ingredients.every( (ingredNeeded) => {
+          return askedIngredsObj[ingredNeeded]
+      } )
   } );
-  return outputCanDoArr;
 }
 let result_o10 = arePossibleRecipes(input_o7, ingredsToUse);
 print(result_o10, 1);
