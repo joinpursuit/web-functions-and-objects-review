@@ -124,11 +124,11 @@ const nthNumber = (num) => Math.floor(Math.random() * num) + 1;
 console.log(`\n 9. Write a function that returns the sum of the absolute values of an array`);
 
 // ```
-let arrAbs = [3,-4,5,-6];
+let inputArr = [3,-4,5,-6];
 // Output: 18
 // ```
 const absFunction = (absArr) => absArr.reduce((acc,curel) => acc += Math.abs(curel));
-  console.log(absFunction(arrAbs));
+  console.log(absFunction(inputArr));
 
 // ## 10. Fahrenheit to Celsius
 console.log(`\n 10.Write a function that converts a temperature in Fahrenheit to Celsius`);
