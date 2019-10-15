@@ -25,6 +25,9 @@
 // console.log(averageOfArray([1,2,3,4,5,10,10]));
 
 //PROBLEM 4
+// const caller = (callback, arr) => {
+//     return callback(arr);
+// }
 // const oddArray = (arr) => {
 //     let oddArr = [];
 //     for (let element of arr) {
@@ -36,6 +39,7 @@
 // }
 
 // console.log(oddArray([1,2,3,4,5,6]));
+// console.log(caller(oddArray,[1,2,3,4,5,6]));
 
 //PROBLEM 5
 // const positiveArrCheck = (arr) => {
@@ -151,17 +155,17 @@ const ageOfConsent = (arr) => {
 let recipes = [
     recipe1 = {
         name: "Apple Pie",
-        ingredients: "apple",
+        ingredients: ["apple", "flour", "butter"],
         time: 30
     },
     recipe2 = {
         name: "Sweet Potatoe Pie",
-        ingredients: "sweet potato",
+        ingredients: ["sweet potato", "flour", "butter"],
         time: 45
     },
     recipe3 = {
         name: "Pumpkin Pie",
-        ingredients: "pumpkin",
+        ingredients: ["pumpkin", "flour", "butter"],
         time: 50
     }
 ]
@@ -178,3 +182,42 @@ const leastTime = (arr) => {
     return recipe;
 }
 // console.log(leastTime(recipes));
+
+// const ingredientsArr = (arr) => {
+//     let ingrArr = [];
+//     for (let element of arr) {
+//         ingrArr.push(element.ingredients);
+//     }
+//     return ingrArr;
+// }
+
+// console.log(ingredientsArr(recipes));
+
+const ingredientsArr = (arr) => {
+    let ingrArr = [];
+    for (let element of arr) {
+        for (let el of element.ingredients) {
+            if (!ingrArr.includes(el)) {
+                ingrArr.push(el);
+            }
+        }
+    }
+    return ingrArr;
+}
+// console.log(ingredientsArr(recipes));
+
+const availRecipes = (arr1, arr2) => {
+    let recipesToMake = [];
+    for (let element of arr1) {
+        for (let i = 0; i < element.ingredients.length; i++) {
+            if (!arr2.includes(element.ingredients[i])) {
+                break;
+            }
+            if (i === element.ingredients.length-1) {
+                recipesToMake.push(element.name);
+            }
+        }
+    }
+    return recipesToMake;
+}
+console.log(availRecipes(recipes, ["apple", "flour", "butter"]))
