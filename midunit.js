@@ -73,7 +73,18 @@
 // PROBLEM 7
 
 
-const newArray = (arr) => {
-    return arr.join(" ")
+// const newArray = (arr) => {
+//     return arr.join(" ")
+// }
+// console.log(typeof newArray(["It’s", "not", "a", "bug.", "It’s", "an", "undocumented", "feature!"]));
+
+
+// PROBLEM 8
+
+
+const ranNum = (input) => {
+    for (let i =0; i < input; i++){
+    }
+     return Math.round(Math.random() * input)   
 }
-console.log(typeof newArray(["It’s", "not", "a", "bug.", "It’s", "an", "undocumented", "feature!"]));
+console.log(ranNum(100))
