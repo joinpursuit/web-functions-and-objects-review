@@ -89,4 +89,7 @@ const absValue = arr => {
 console.log(absValue([3,-4,5,-6]))
 
 //Problem 10
-const tempC
+const tempFToC = tempInF => {
+    return (tempInF - 32)/1.8
+}
+console.log(tempFToC(32))
