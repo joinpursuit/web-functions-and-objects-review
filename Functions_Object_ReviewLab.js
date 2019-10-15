@@ -93,3 +93,15 @@ const tempFToC = tempInF => {
     return (tempInF - 32)/1.8
 }
 console.log(tempFToC(32))
+
+// OBJECTS !
+//QUESTION 1
+
+
+let User = {
+    name:
+    emailAddress:
+    age:
+
+}
+
