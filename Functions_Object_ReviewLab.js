@@ -54,3 +54,19 @@ const lowerCase = arr => {
     return lower
 }
 console.log(lowerCase(["HELLO", "THERE", "THESE", "ARE", "SOME", "STRINGS"]))
+
+const lowerCase2 = arr => {
+    for (let i=0; i<arr.length;i++){
+        arr[i] = arr[i].toLowerCase()
+    } 
+    return arr
+}
+console.log(lowerCase2(["HELLO", "THERE", "THESE", "ARE", "SOME", "STRINGS"]))
+
+
+//PROBLEM 7
+
+const combineString = arr => {
+    return arr.join(" ")
+}
+console.log(combineString(["It’s", "not", "a", "bug.", "It’s", "an", "undocumented", "feature!"]))
