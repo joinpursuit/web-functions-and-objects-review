@@ -78,3 +78,15 @@ const random = (n) => {
 console.log(random(7))
 
 //Problem 9
+const absValue = arr => {
+    let sum = 0
+    for (let i = 0; i < arr.length ; i++){
+        arr[i] = Math.abs(arr[i])
+        sum += arr[i]
+    }
+    return sum
+}
+console.log(absValue([3,-4,5,-6]))
+
+//Problem 10
+const tempC
