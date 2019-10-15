@@ -68,8 +68,25 @@
 // console.log(combineArray(["It’s", "not", "a", "bug.", "It’s", "an", "undocumented", "feature!"]));
 
 //PROBLEM 8
-const randomInt = (max) => {
-    return Math.floor(Math.random() * max) + 1;
-}
+// const randomInt = (max) => {
+//     return Math.floor(Math.random() * max) + 1;
+// }
 
-console.log(randomInt(7));
+// console.log(randomInt(7));
+
+//PROBLEM 9
+// const absoluteSum = (arr) => {
+//     let sum = 0;
+//     for(let element of arr) {
+//         sum += Math.abs(element)
+//     }
+//     return sum;
+// }
+
+// console.log(absoluteSum([3, -4, 5, -6]))
+
+//PROBLEM 10
+const tempChange = (temp) => {
+    return (temp - 32) * (5/9);
+}
+console.log(tempChange(212));
