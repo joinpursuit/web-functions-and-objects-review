@@ -99,7 +99,7 @@ const farenToCel = temp => {
 console.log(farenToCel(212))
 
 console.log("Object")
-console.log("Problem 1")
+console.log("Object 1")
 let user = {
 
 }
@@ -109,12 +109,30 @@ user.age = 25
 
 console.table(user)
 
-console.log("Problem 2")
-let userArr = [{}]
+console.log("Object 2")
+let userArr = [{},{},{}]
+userArr[0]['email'] = "janedoe@pursuit.org"
 userArr[0]['sex'] = "female"
 userArr[0]['shoe size'] = 9
 userArr[0]['favoite movie'] = "The Lion King"
+userArr[1]['email'] = "johndoe@pursuit.org"
+userArr[2]['email'] = "thisshitworks@pursuit.org"
 
 console.log(userArr)
 
-console.log("Problem 3")
+console.log("Object 3")
+const emailOnly = (arr) => {
+    let emptyArr = []
+    for(let i = 0; i < arr.length; i++){
+        // emptyArr = arr[i].join(" ")
+        if(arr[i]['email']){
+            emptyArr += arr[i]['email'];
+            emptyArr += " "
+        }
+    }
+    return emptyArr
+}
+
+console.log(emailOnly(userArr))
+
+console.log("Object 4")
