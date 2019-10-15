@@ -17,3 +17,27 @@ const arrAverage = (arr) => {
 }
 let arr3=[1,2,3,4,5,10,10]
 console.log(arrAverage(arr3))
+//4.
+let arr4 = [1,2,3,4,5,6]
+let oddArr = []
+function findOdd(arr) {
+    for (let i = 0; i < arr.length; i++){
+        if(arr[i]%2 != 0){
+            oddArr.push(arr[i])
+        }
+    }
+    return oddArr
+}
+console.log(findOdd(arr4))
+//5.
+let arr5 = [4,3,2,4]
+const onlyPoss = (arr) =>{
+    for(let i = 0; i < arr.length; i++){
+        if(i > 0){
+            return true
+        }else{
+            return false
+            }
+    }
+}
+console.log(onlyPoss(arr5))
