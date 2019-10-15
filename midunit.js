@@ -5,6 +5,7 @@
 // }
 // console.log(avg(9,21))
 
+// Problem 2
 
 // const avg2 = (num1, num2, num3) => {
 //     return (num1 + num2 + num3) / 3
@@ -13,7 +14,7 @@
 
 
 
-// PROBLEM 2
+// PROBLEM 3
 
 
 // const avg = (arr) =>{
@@ -26,16 +27,30 @@
 // console.log(avg([1, 2, 3, 4, 5, 10, 10]))
 
 
-// PROBLEM 3
+// PROBLEM 4
 
-let arr1 = [1, 2, 3, 4, 5, 6]
-const newArray = (arr) => {
-    let newArray = []
-    for (i = 0; i < arr.length; i ++)
-    if (arr[i] % 2 === 0){
-        newArray.push(arr[i])
-    }
-    return newArray
+// let arr1 = [1, 2, 3, 4, 5, 6]
+// const newArray = (arr) => {
+//     let newArray = []
+//     for (i = 0; i < arr.length; i ++)
+//     if (arr[i] % 2 === 0){
+//         newArray.push(arr[i])
+//     }
+//     return newArray
 
+// }
+// console.log(newArray(arr1));
+
+
+//problem 5
+const positiveNum = (arr) =>{
+    for (let i = 0; i < arr.length; i++) {
+        if(arr[i] >= 0) {
+            return true 
+        } else {
+            return false
+        }
+
+    } 
 }
-console.log(newArray(arr1));
+     console.log(positiveNum([-4,3,-2,4]));
