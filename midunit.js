@@ -43,14 +43,31 @@
 
 
 //problem 5
-const positiveNum = (arr) =>{
-    for (let i = 0; i < arr.length; i++) {
-        if(arr[i] >= 0) {
-            return true 
-        } else {
-            return false
-        }
+// const positiveNum = (arr) =>{
+//     for (let i = 0; i < arr.length; i++) {
+//         if(arr[i] >= 0) {
+//             return true 
+//         } else {
+//             return false
+//         }
 
-    } 
+//     } 
+// }
+//      console.log(positiveNum([-4,3,-2,4]));
+
+
+// problem 6
+
+const string = (arr) => {
+    let lowerString = []
+    for (let i = 0; i < arr.length; i++){
+        lowerString.push(arr[i].toLowerCase())
+    }
+    return lowerString
 }
-     console.log(positiveNum([-4,3,-2,4]));
+console.log(string(["HELLO", "THERE", "ARE", "SOME", "STRINGS"]))
+
+    
+
+    
+    
