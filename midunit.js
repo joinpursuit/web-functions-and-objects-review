@@ -58,16 +58,22 @@
 
 // problem 6
 
-const string = (arr) => {
-    let lowerString = []
-    for (let i = 0; i < arr.length; i++){
-        lowerString.push(arr[i].toLowerCase())
-    }
-    return lowerString
+// const string = (arr) => {
+//     let lowerString = []
+//     for (let i = 0; i < arr.length; i++){
+//         lowerString.push(arr[i].toLowerCase())
+//     }
+//     return lowerString
+// }
+// console.log(string(["HELLO", "THERE", "ARE", "SOME", "STRINGS"]))
+
+    
+
+    
+// PROBLEM 7
+
+
+const newArray = (arr) => {
+    return arr.join(" ")
 }
-console.log(string(["HELLO", "THERE", "ARE", "SOME", "STRINGS"]))
-
-    
-
-    
-    
+console.log(typeof newArray(["It’s", "not", "a", "bug.", "It’s", "an", "undocumented", "feature!"]));
