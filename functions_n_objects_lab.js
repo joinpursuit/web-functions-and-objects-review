@@ -50,12 +50,12 @@ let num = 0;
 const remArr = (arr) => {
     for(let i = 0; i < arr.length; i ++) {
         if(arr[i] % 2 === 1) { 
-            num += arr[i]; 
-            console.log(arr[i]);    
-        }  
+            num += arr[i];    
+        } 
+        return num;
     }
 }
-console.log(remArr([1, 2, 3, 4]))
+console.log(remArr([1, 2, 3, 5, 4]))
 // Write a function that returns a new array with all even numbers removed.
 
 // ```
@@ -66,9 +66,16 @@ console.log(remArr([1, 2, 3, 4]))
 // BONUS: If you didn't, rewrite this using an array method with a callback
 
 // ## 5. Make sure each number is positive
-const positive = (arr) => {
-    
-}
+// const positive = (arr) => {
+//     pos=arr[0];
+//     for(let i=0; i<arr.length; i++){
+//         pos+=arr[i]
+//         if(pos>0){
+//             console.log("true");
+//         }
+//     }
+// }
+// console.log(positive([1,2,3,4]))
 // Write a function that checks to see whether every number in an array is positive.
 
 // ```
