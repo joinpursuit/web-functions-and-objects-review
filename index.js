@@ -14,12 +14,25 @@
 // console.log(averageOfThreeNum(1,3,5));
 
 //PROBLEM 3
-const averageOfArray = (arr) => {
-    let sum = 0;
-    for(let element of arr) {
-        sum += element;
+// const averageOfArray = (arr) => {
+//     let sum = 0;
+//     for(let element of arr) {
+//         sum += element;
+//     }
+//     return sum / arr.length;
+// }
+
+// console.log(averageOfArray([1,2,3,4,5,10,10]));
+
+//PROBLEM 4
+const oddArray = (arr) => {
+    let oddArr = [];
+    for (let element of arr) {
+        if (element % 2 === 1) {
+            oddArr.push(element);
+        }
     }
-    return sum / arr.length;
+    return oddArr;
 }
 
-console.log(averageOfArray([1,2,3,4,5,10,10]));
+console.log(oddArray([1,2,3,4,5,6]));
