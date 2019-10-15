@@ -22,14 +22,39 @@
 // console.log(arrayAverage([1,2,3,4,5,10,10]))
 // //shift option down 
 
-const arrayEven = (arr) => {
-  let array = []
-  for(let i = 0; i < arr.length; i++) {
-    if(i % 2 !== 1) {
-      array.push(arr[i])
+// const arrayOdd = (arr) => {
+//   let array = []
+//   for(let i = 0; i < arr.length; i++) {
+//     if(i % 2 !== 1) {
+//       array.push(arr[i])
+//     }
+//   }
+//   return array
+// }
+
+// console.log(arrayOdd([1,2,3,4,5,6]))
+
+
+
+const arrayPositive = (arr) => {
+  for(let i = 0; i < arr.length; i+=1) {
+    if(arr[i] < 0) {
+       console.log("false")
+    // } else {
+      // console.log("true")
     }
+  }
+  return
+}
+console.log(arrayPositive([4,3,2,4]));
+
+
+
+const lowString = (arr) => {
+  let array = [ ]
+  for(let i = 0; i < arr.length; i++) {
+    array.push(arr[i].toLowerCase())
   }
   return array
 }
-
-console.log(arrayEven([1,2,3,4,5,6]))
+console.log(lowString(["HELLO", "THERE", "THESE", "ARE", "SOME", "STRINGS"]))
