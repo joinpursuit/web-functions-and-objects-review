@@ -111,17 +111,17 @@ let arr = []
 let user1 = {
     name: "God",
     emailAddress: "blah@gmail.com",
-    age: "infinity"
+    age: 55
 }
 let user2 = {
     name: "Brandon",
     emailAddress: "blahblah@yahoo.com",
-    age: "23"
+    age: 23
 }
 let user3 = {
     name: "Nilber",
     emailAddress: "blahx3@itunes.com",
-    age: "21"
+    age: 21
 }
 
 arr.push(user1, user2, user3)
@@ -139,9 +139,19 @@ const getEmail = (array) => {
 }
 console.log(getEmail(arr))
 
-//
+//QUESTION 4
 
 
+const averageAge = (array) => {
+    let sum = 0
+    
+    for(let i = 0; i < array.length ; i++){
+        sum = sum + array[i].age
+        
+    }
+    return sum / array.length
+}
 
+console.log(averageAge(arr))
 
 
