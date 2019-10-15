@@ -128,4 +128,20 @@ arr.push(user1, user2, user3)
 
 console.log(arr)
 
+//QUESTION 3
+
+const getEmail = (array) => {  
+    let newArr = []
+    for (let i = 0; i < array.length ; i++){ //code to print only email address of object in an array
+        newArr.push(array[i].emailAddress)
+    }
+    return newArr
+}
+console.log(getEmail(arr))
+
+//
+
+
+
+
 
