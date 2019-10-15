@@ -87,6 +87,12 @@ Output: 3
 ```
 Bonus: Your function should return 1 or 7 inclusive
 
+const  randomNum = (n) => {
+  return Math.floor((Math.random()*n) =1)
+}
++ 1
+change the =
+
 ## 9. Sum of absolute values
 
 Write a function that returns the sum of the absolute values of an array
