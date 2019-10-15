@@ -86,7 +86,95 @@
 // console.log(absoluteSum([3, -4, 5, -6]))
 
 //PROBLEM 10
-const tempChange = (temp) => {
-    return (temp - 32) * (5/9);
+// const tempChange = (temp) => {
+//     return (temp - 32) * (5/9);
+// }
+// console.log(tempChange(212));
+
+//OBJECTS
+//Step 1 && 2
+let users = [
+    user1 = {
+        name: "Samantha",
+        emailAddress: "Samantha@gmail.com",
+        age: 19
+    },
+
+    user2 = {
+        name: "Isaiah",
+        emailAddress: "Isaiah@gmail.com",
+        age: 19
+    },
+
+    user3 = {
+        name: "Corey",
+        emailAddress: "Corey@gmail.com",
+        age: 19
+    }
+]
+
+//Step 3
+const userEmail = (arr) => {
+    let emailAdresses = [];
+    for(let element of arr) {
+        emailAdresses.push(element.emailAddress);
+    }
+    return emailAdresses;
 }
-console.log(tempChange(212));
+
+// console.log(userEmail(users))
+
+//Step 4
+const averageAge = (arr) => {
+    let ageSum = 0;
+    for(let element of arr) {
+        ageSum += element.age;
+    }
+    return Math.floor(ageSum / arr.length);
+}
+
+// console.log(averageAge(users));
+
+//Step 5
+const ageOfConsent = (arr) => {
+    for(let element of arr) {
+        if(element.age < 18) {
+            return false;
+        }
+    }
+    return true;
+}
+
+// console.log(ageOfConsent(users));
+
+//Step 6
+let recipes = [
+    recipe1 = {
+        name: "Apple Pie",
+        ingredients: "apple",
+        time: 30
+    },
+    recipe2 = {
+        name: "Sweet Potatoe Pie",
+        ingredients: "sweet potato",
+        time: 45
+    },
+    recipe3 = {
+        name: "Pumpkin Pie",
+        ingredients: "pumpkin",
+        time: 50
+    }
+]
+
+const leastTime = (arr) => {
+    let shortestTime = Infinity;
+    let recipe
+    for (let element of arr) {
+        if (element.time < shortestTime) {
+            shortestTime = element.time;
+            recipe = element.name;
+        }
+    }
+    return recipe;
+}
+// console.log(leastTime(recipes));
