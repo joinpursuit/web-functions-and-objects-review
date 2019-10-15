@@ -28,14 +28,13 @@ let arr = []
    console.log(avOfArray([1, 2, 3, 4, 5, 10, 10]))
 
  // Question 4
- let i = 0
- let newArray = []
-const evenFunction = (arr) => {
- for (let i = 0; i < arr.length; i++) {
-   if (i % 2 !== 0) {
-   arr[i] = newArray.push(i)
+ const evenFunction = (arr) => {
+    let newArray = []
+    for (let element of arr) {
+      if (element % 2 === 1) {
+        newArray.push(element);
+      }
+    }
+    return newArray
    }
- }
- return newArray
-}
-console.log(evenFunction([1,2,3,4,5,6]))
+   console.log(evenFunction([1,2,3,4,5,6]));
