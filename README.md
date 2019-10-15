@@ -117,6 +117,11 @@ Write a function that combines an array of strings into a single string separate
 Input: ["It’s", "not", "a", "bug.", "It’s", "an", "undocumented", "feature!"]
 Output: "It’s not a bug. It’s an undocumented feature!""
 ```
+const combineString = (arr) => {
+    let array2 = arr.join(" ")
+    return array2
+  }
+  console.log(combineString(["It’s", "not", "a", "bug.", "It’s", "an", "undocumented", "feature!"]))
 
 ## 8. Random number
 
