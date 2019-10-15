@@ -50,11 +50,19 @@
 // console.log(positiveArrCheck([-4,3,-2,4]))
 
 //PROBLEM 6
-const lowerCaseString = (arr) => {
-    let lowerCaseArr = []
-    for (let element of arr) {
-        lowerCaseArr.push(element.toLowerCase());
-    }
-    return lowerCaseArr;
+// const lowerCaseString = (arr) => {
+//     let lowerCaseArr = []
+//     for (let element of arr) {
+//         lowerCaseArr.push(element.toLowerCase());
+//     }
+//     return lowerCaseArr;
+// }
+// console.log(lowerCaseString(["HELLO", "THERE", "THESE", "ARE", "SOME", "STRINGS"]));
+
+//PROBLEM 7
+const combineArray = (arr) => {
+    let combined = arr.join(" ");
+    return combined;
 }
-console.log(lowerCaseString(["HELLO", "THERE", "THESE", "ARE", "SOME", "STRINGS"]));
+
+console.log(combineArray(["It’s", "not", "a", "bug.", "It’s", "an", "undocumented", "feature!"]));
