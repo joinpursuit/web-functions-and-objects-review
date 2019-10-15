@@ -70,3 +70,11 @@ const combineString = arr => {
     return arr.join(" ")
 }
 console.log(combineString(["It’s", "not", "a", "bug.", "It’s", "an", "undocumented", "feature!"]))
+
+//Problem 8
+const random = (n) => {
+    return Math.ceil((Math.random() * (n-1)) + 1)
+} 
+console.log(random(7))
+
+//Problem 9
