@@ -71,13 +71,53 @@
 // Input: [-4,3,-2,4]
 // Output: false
 // ```
-const checkPositive = (arr) => {
-    let ans = " "
-    for (i = 0; i < arr.length; i++) {
-        if (arr[i] > 0){
-            ans = true
-        } else (ans = false)
-    } 
-    return ans
+// const checkPositive = (arr) => {
+//     let ans = " "
+//     for (i = 0; i < arr.length; i++) {
+//         if (arr[i] > 0){
+//             ans = true
+//         } else (ans = false)
+//     } 
+//     return ans
+// }
+// console.log(checkPositive([2,4,6,8,9,4,0]))
+
+// ## 6. Lowercase all strings
+
+// Write a function that lowercases all strings in an array of strings.
+
+// ```
+// Input: ["HELLO", "THERE", "THESE", "ARE", "SOME", "STRINGS"]
+// Output: ["hello", "there", "these", "are", "some", "strings"]
+// ```
+
+// BONUS: 
+//   - A. If you didn't, rewrite this using an array method with a callback
+
+//   - B. Make it work even if the array has mixed types inside so that input = `[1, 'HELLO', {one: 'uno'}]` would give output = `['hello']` 
+// let newArr = [1, 'HELLO', {one: 'uno'}]
+
+// const lowercaseArray = (arr) => {
+//     let lowercaseStrings = []
+//     for (let i = 0; i < arr.length; i++){
+//        if (typeof arr[i] === "string"){ 
+//            lowercaseStrings.push(arr[i].toLowerCase())
+//        }
+//     }
+//     return lowercaseStrings
+// }
+
+// console.log(lowercaseArray(newArr))
+
+// ## 7. Combine strings
+
+// Write a function that combines an array of strings into a single string separated by spaces.
+
+// ```
+// Input: ["It’s", "not", "a", "bug.", "It’s", "an", "undocumented", "feature!"]
+// Output: "It’s not a bug. It’s an undocumented feature!""
+// ```
+const makeASentence = (arr) => {
+    return arr.join(" ")
 }
-console.log(checkPositive([2,4,6,8,9,4,0]))
+console.log(makeASentence(["It’s", "not", "a", "bug.", "It’s", "an", "undocumented", "feature!"]))
