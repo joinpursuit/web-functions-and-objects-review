@@ -32,3 +32,25 @@ const evenNum = (arr) => {
  } 
 
 console.log(evenNum([1,2,3,4]))
+
+//PROBLEM 5
+const posNum = (arr) => {
+    let falseArr = true
+    for (let i=0;i<arr.length;i+=1){
+        if (arr[i] < 0){
+        falseArr = false
+        } 
+    } 
+    return falseArr
+}
+console.log(posNum([1,2,3,4]))
+
+//PROBLEM 6
+const lowerCase = arr => {
+    let lower = []
+    for (let i=0; i<arr.length;i++){
+        lower.push(arr[i].toLowerCase())
+    } 
+    return lower
+}
+console.log(lowerCase(["HELLO", "THERE", "THESE", "ARE", "SOME", "STRINGS"]))
