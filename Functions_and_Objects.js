@@ -71,13 +71,19 @@ switchCase(array1)
   ## 7. Combine strings
 
   Write a function that combines an array of strings into a single string separated by spaces.
-
+  const arrString = (arr) =>{
+    return arr.join(" ")
+  }
 
 
   ## 8. Random number
 
 Write a function that returns a random integer between 1 and n
 
+const  randomNum = (n) => {
+  return Math.floor((Math.random()*n) =1)
+}
++ 1
 
 
 ## 9. Sum of absolute values
@@ -106,3 +112,8 @@ return (num - 32) *(5/9)
 }
 
 console.log(ftoc(32))
+
+## 10. Fahrenheit to Celsius
+
+Write a function that converts a temperature in Fahrenheit to Celsius 
+
