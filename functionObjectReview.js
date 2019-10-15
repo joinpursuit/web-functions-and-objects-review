@@ -166,3 +166,12 @@ const ageOver18 = (arr) => {
     return output;
 }
 console.log(ageOver18(arrayUsers));
+
+//question 6
+let recipe = {
+    name: "cookies",
+    ingredients: ["chocolate chips", "sugar", "cookie dough", "vanilla"],
+    time: 20
+}
+
+
