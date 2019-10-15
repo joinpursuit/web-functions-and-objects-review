@@ -60,9 +60,16 @@
 // console.log(lowerCaseString(["HELLO", "THERE", "THESE", "ARE", "SOME", "STRINGS"]));
 
 //PROBLEM 7
-const combineArray = (arr) => {
-    let combined = arr.join(" ");
-    return combined;
+// const combineArray = (arr) => {
+//     let combined = arr.join(" ");
+//     return combined;
+// }
+
+// console.log(combineArray(["It’s", "not", "a", "bug.", "It’s", "an", "undocumented", "feature!"]));
+
+//PROBLEM 8
+const randomInt = (max) => {
+    return Math.floor(Math.random() * max) + 1;
 }
 
-console.log(combineArray(["It’s", "not", "a", "bug.", "It’s", "an", "undocumented", "feature!"]));
+console.log(randomInt(7));
