@@ -13,14 +13,20 @@
 
 // console.log(averageOfThreeNum(1,3,5));
 
+const aveOfSomeAmount = (...args) => {
+    return averageOfArray(args)
+}
+
 //PROBLEM 3
-// const averageOfArray = (arr) => {
-//     let sum = 0;
-//     for(let element of arr) {
-//         sum += element;
-//     }
-//     return sum / arr.length;
-// }
+const averageOfArray = (arr) => {
+    let sum = 0;
+    for(let element of arr) {
+        sum += element;
+    }
+    return sum / arr.length;
+}
+
+console.log(aveOfSomeAmount(1, 2, 3, 4, 5))
 
 // console.log(averageOfArray([1,2,3,4,5,10,10]));
 
