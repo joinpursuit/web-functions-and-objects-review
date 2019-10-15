@@ -1,3 +1,6 @@
+//NEED TO DO 5 AND 7B
+//
+//
 //1.
 const averageAmount = (num1,num2) =>{
    return (num1 + num2)/2
@@ -50,3 +53,21 @@ function lowerCase(arr){
     }return lowerArr
 }
 console.log(lowerCase(arr6))
+const lowerCaseB = (arr) => {
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i] == "string"){
+            lowerArr.push(arr[i].toLowerCase())
+        }else{
+            continue
+        }
+    }return 
+}
+arr6B = [1, 'HELLO', {one:'uno'}]
+console.log(lowerCaseB(arr6B))
+//7.
+function combiningStrings(arr) {  
+    return arr.join(' ')
+}
+let arrString = ["It’s", "not", "a", "bug.", "It’s", "an", "undocumented", "feature!"]
+console.log(combiningStrings(arrString))
+//8.
