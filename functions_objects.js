@@ -140,3 +140,50 @@ const adultAge = (arr) => {
     }
 }
 console.log(adultAge(array))
+
+//Problem 6
+let Recipe1 = {
+    name: "Banana Bread",
+    ingredients: ["flour", "banana"],
+    time: 30,
+}
+
+
+//Problem 7
+let Recipe2 = {
+    name: "toast",
+    ingredients: ["bread"],
+    time: 2,
+}
+let Recipe3 = {
+    name: "chocolate chip cookies",
+    ingredients: ["flour", "sugar", "chocolate chips"],
+    time: 60,
+}
+let recipeArray = []
+recipeArray.push(Recipe1, Recipe2, Recipe3);
+console.log(recipeArray)
+
+
+//Problem 8
+const leastTime = (arr) => {
+    let least = arr[0]["time"]
+    for (let i = 0; i < arr.length; i++){
+        if(least > arr[i]["time"]){
+            least = arr[i]["time"]
+        }
+    } 
+    return least
+}
+console.log(leastTime(recipeArray))
+
+
+//Problem 9
+const recipeIngredients = (arr) => {
+    let newArray1 = []
+    for (let i = 0; i < arr.length; i++) {
+        newArray1.push(arr[i]["ingredients"])
+    }
+    return newArray1
+}
+console.log(recipeIngredients(recipeArray))
