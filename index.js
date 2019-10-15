@@ -25,14 +25,26 @@
 // console.log(averageOfArray([1,2,3,4,5,10,10]));
 
 //PROBLEM 4
-const oddArray = (arr) => {
-    let oddArr = [];
-    for (let element of arr) {
-        if (element % 2 === 1) {
-            oddArr.push(element);
+// const oddArray = (arr) => {
+//     let oddArr = [];
+//     for (let element of arr) {
+//         if (element % 2 === 1) {
+//             oddArr.push(element);
+//         }
+//     }
+//     return oddArr;
+// }
+
+// console.log(oddArray([1,2,3,4,5,6]));
+
+//PROBLEM 5
+const positiveArrCheck = (arr) => {
+    for(let element of arr) {
+        if(element < 0) {
+            return false;
         }
     }
-    return oddArr;
+    return true;
 }
 
-console.log(oddArray([1,2,3,4,5,6]));
+console.log(positiveArrCheck([-4,3,-2,4]))
