@@ -131,9 +131,26 @@
 // Input: ["It’s", "not", "a", "bug.", "It’s", "an", "undocumented", "feature!"]
 // Output: "It’s not a bug. It’s an undocumented feature!""
 
-let arr1 = ["It’s", "not", "a", "bug.", "It’s", "an", "undocumented", "feature!"]
-function stringCombine(arr) {
-    return arr.join(" ")
-}
+// let arr1 = ["It’s", "not", "a", "bug.", "It’s", "an", "undocumented", "feature!"]
+// function stringCombine(arr) {
+//     return arr.join(" ")
+// }
 
-console.log(stringCombine(arr1))
+// console.log(stringCombine(arr1))
+
+// ## 8. Random number
+
+// Write a function that returns a random integer between 1 and n
+
+// ```
+// Input: 7
+// Output: 3
+// ```
+// Bonus: Your function should return 1 or 7 inclusive
+let test = 8
+function randomInt(num1) {
+let randomNum = 0
+randomNum = Math.floor(Math.random() * num1 )
+return randomNum
+}
+console.log(randomInt(test))
