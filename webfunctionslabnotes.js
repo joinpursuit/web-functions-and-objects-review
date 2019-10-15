@@ -36,25 +36,31 @@
 
 
 
-const arrayPositive = (arr) => {
-  for(let i = 0; i < arr.length; i+=1) {
-    if(arr[i] < 0) {
-       console.log("false")
-    // } else {
-      // console.log("true")
-    }
-  }
-  return
+// const arrayPositive = (arr) => {
+//   for(let i = 0; i < arr.length; i+=1) {
+//     if(arr[i] < 0) {
+//        console.log("false")
+//     // } else {
+//       // console.log("true")
+//     }
+//   }
+//   return
+// }
+// console.log(arrayPositive([4,3,2,4]));
+
+
+
+// const lowString = (arr) => {
+//   let array = [ ]
+//   for(let i = 0; i < arr.length; i++) {
+//     array.push(arr[i].toLowerCase())
+//   }
+//   return array
+// }
+// console.log(lowString(["HELLO", "THERE", "THESE", "ARE", "SOME", "STRINGS"]));
+
+const randomNum = (min, max) => {
+  
+  return (Math.floor(Math.random() * 5))
 }
-console.log(arrayPositive([4,3,2,4]));
-
-
-
-const lowString = (arr) => {
-  let array = [ ]
-  for(let i = 0; i < arr.length; i++) {
-    array.push(arr[i].toLowerCase())
-  }
-  return array
-}
-console.log(lowString(["HELLO", "THERE", "THESE", "ARE", "SOME", "STRINGS"]))
+console.log(randomNum())
