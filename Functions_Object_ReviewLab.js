@@ -19,3 +19,16 @@ const avgArray = (arr) => {
     return sum/arr.length
 }
 console.log(avgArray([1,2,3,4]))
+
+//PROBLEM 4
+const evenNum = (arr) => {
+    let evenArr = []
+    for (let i=0;i<arr.length;i+=1){
+        if (arr[i]%2 === 0){
+            evenArr.push(arr[i]) 
+    }
+  }
+    return evenArr
+ } 
+
+console.log(evenNum([1,2,3,4]))
