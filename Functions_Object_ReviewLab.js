@@ -98,10 +98,34 @@ console.log(tempFToC(32))
 //QUESTION 1
 
 
-let User = {
-    name:
-    emailAddress:
-    age:
+// let User = {
+//     name:
+//     emailAddress:
+//     age:
 
+// }
+
+//QUESTION 2
+
+let arr = []
+let user1 = {
+    name: "God",
+    emailAddress: "blah@gmail.com",
+    age: "infinity"
 }
+let user2 = {
+    name: "Brandon",
+    emailAddress: "blahblah@yahoo.com",
+    age: "23"
+}
+let user3 = {
+    name: "Nilber",
+    emailAddress: "blahx3@itunes.com",
+    age: "21"
+}
+
+arr.push(user1, user2, user3)
+
+console.log(arr)
+
 
