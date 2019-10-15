@@ -41,3 +41,12 @@ const onlyPoss = (arr) =>{
     }
 }
 console.log(onlyPoss(arr5))
+//6.
+let arr6 = ['HELLO', 'THERE', 'THESE', 'ARE', 'SOME', 'STRINGS']
+let lowerArr = []
+function lowerCase(arr){
+    for (let i = 0; i < arr.length; i++){
+        lowerArr.push(arr[i].toLowerCase())
+    }return lowerArr
+}
+console.log(lowerCase(arr6))
