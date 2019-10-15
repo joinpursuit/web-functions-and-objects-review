@@ -10,7 +10,11 @@ const averageFunction = (num1, num2) => {
 console.log(averageFunction(4, 6))
 
 
-
+const avgThree = (numA, numB, numC) => {
+    let avg = (numA + numB + numC)/3
+    return avg
+}
+console.log(avgThree(1,3,5))
 
 
 
