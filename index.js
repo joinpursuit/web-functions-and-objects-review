@@ -38,13 +38,23 @@
 // console.log(oddArray([1,2,3,4,5,6]));
 
 //PROBLEM 5
-const positiveArrCheck = (arr) => {
-    for(let element of arr) {
-        if(element < 0) {
-            return false;
-        }
-    }
-    return true;
-}
+// const positiveArrCheck = (arr) => {
+//     for(let element of arr) {
+//         if(element < 0) {
+//             return false;
+//         }
+//     }
+//     return true;
+// }
 
-console.log(positiveArrCheck([-4,3,-2,4]))
+// console.log(positiveArrCheck([-4,3,-2,4]))
+
+//PROBLEM 6
+const lowerCaseString = (arr) => {
+    let lowerCaseArr = []
+    for (let element of arr) {
+        lowerCaseArr.push(element.toLowerCase());
+    }
+    return lowerCaseArr;
+}
+console.log(lowerCaseString(["HELLO", "THERE", "THESE", "ARE", "SOME", "STRINGS"]));
