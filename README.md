@@ -13,6 +13,12 @@ Write a function that takes in two numbers as input and returns their average
 Input: 4,6
 Output: 5
 ```
+const numAverage = (num1, num2) => {
+    let average = 0
+    average = (num1 + num2) /2
+    return average 
+} 
+console.log(numAverage(4,6))
 
 ## 2. Average of three numbers
 
@@ -23,6 +29,13 @@ Input: 1,3,5
 Output: 3
 ```
 
+const numAverage = (num1, num2, num3) => {
+
+    let average = Math.floor((num1 + num2 + num3) /3)
+    return average 
+} 
+console.log(numAverage(4,6,10))
+
 ## 3. Average of array
 
 Write a function that takes in an array of numbers as input and returns their average
@@ -31,6 +44,14 @@ Write a function that takes in an array of numbers as input and returns their av
 Input: [1,2,3,4,5,10,10]
 Output: 5
 ```
+const arrayAverage = (arr) => {
+    let average = 0
+    for(let i = 0; i < arr.length; i++){
+      average += arr[i] / arr.length
+    }
+    return average
+}
+console.log(arrayAverage([1,2,3,4,5,10,10]))
 
 ## 4. Remove even numbers
 
@@ -40,6 +61,18 @@ Write a function that returns a new array with all even numbers removed.
 Input: [1,2,3,4,5,6]
 Output: [1,3,5]
 ```
+
+const arrayOdd = (arr) => {
+  let array = []
+  for(let i = 0; i < arr.length; i++) {
+    if(i % 2 !== 1) {
+      array.push(arr[i])
+    }
+  }
+  return array
+}
+
+console.log(arrayOdd([1,2,3,4,5,6]))
 
 BONUS: If you didn't, rewrite this using an array method with a callback
 
@@ -62,6 +95,14 @@ Write a function that lowercases all strings in an array of strings.
 Input: ["HELLO", "THERE", "THESE", "ARE", "SOME", "STRINGS"]
 Output: ["hello", "there", "these", "are", "some", "strings"]
 ```
+const lowString = (arr) => {
+  let array = [ ]
+  for(let i = 0; i < arr.length; i++) {
+    array.push(arr[i].toLowerCase())
+  }
+  return array
+}
+console.log(lowString(["HELLO", "THERE", "THESE", "ARE", "SOME", "STRINGS"]))
 
 BONUS: 
   - A. If you didn't, rewrite this using an array method with a callback
@@ -76,6 +117,11 @@ Write a function that combines an array of strings into a single string separate
 Input: ["It’s", "not", "a", "bug.", "It’s", "an", "undocumented", "feature!"]
 Output: "It’s not a bug. It’s an undocumented feature!""
 ```
+const combineString = (arr) => {
+    let array2 = arr.join(" ")
+    return array2
+  }
+  console.log(combineString(["It’s", "not", "a", "bug.", "It’s", "an", "undocumented", "feature!"]))
 
 ## 8. Random number
 
