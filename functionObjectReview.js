@@ -1,18 +1,18 @@
 // question 1 
-const avg = (num1,num2) => {
+const avg2 = (num1,num2) => {
      return (num1 + num2)/2
 }
-console.log(avg(4,6));
+console.log(avg2(4,6));
 
 //question 2
-const avg2 = (num1,num2,num3) => {
+const avg3 = (num1,num2,num3) => {
     return (num1 + num2+num3)/3
 }
-console.log(avg2(1,3,5));
+console.log(avg3(1,3,5));
 
 //question 3
 const avgArr = (arr) => {
-    sum = 0
+    let sum = 0
     for(let i = 0; i < arr.length; i++){
         sum += arr[i]
     }
@@ -22,7 +22,7 @@ console.log(avgArr([1,2,3,4,5,10,10]));
 
 //question 4 
 const removeEven = (arr) => {
-    arr1 = [];
+    let arr1 = [];
     for(let i = 0; i < arr.length; i++){
         if(arr[i] % 2 === 1){
             arr1.push(arr[i]);
@@ -101,11 +101,11 @@ const sumAbsolute = (arr) => {
 console.log(sumAbsolute([3,-4,5,-6]));
 
 //question 10
-const f2C = (F) => {
-let c = (F-32) * (5/9) 
-return c;
+const fToC = (F) => {
+    let c = (F-32) * (5/9) 
+    return c;
 }
-console.log(f2C(212));
+console.log(fToC(212));
 
 //OBJECTS
 //question 1
@@ -154,4 +154,15 @@ const avgAge = (arr) => {
 console.log(avgAge(arrayUsers));
 
 //question 5
-
+const ageOver18 = (arr) => {
+    let output = false;
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i]["age"] <= 18){
+            output = false;
+        } else{
+            output = true;
+        }
+    }
+    return output;
+}
+console.log(ageOver18(arrayUsers));
