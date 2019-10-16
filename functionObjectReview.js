@@ -173,5 +173,57 @@ let recipe = {
     ingredients: ["chocolate chips", "sugar", "cookie dough", "vanilla"],
     time: 20
 }
+console.log(recipe);
+
+// question 7
+let recipeArr = [
+    {
+        name: 'grilled cheese',
+        ingredients: ["toasted white bread", "butter", "american cheese"],
+        time: 10
+    },
+    {
+        name: "bacon, egg, and cheese",
+        ingredients: ["toasted roll", "eggs", "bacon"],
+        time: 15
+    },
+    {
+        name: 'philly cheese',
+        ingredients: ["shredded beef steak", "peppers", "onions", "hero rolls", "cheese", "butter"],
+        time: 12
+    },
+]
+
+// question 8
+const leastTime = (array) => {
+    let least = array[0]["time"];
+    let leastName = array[0]["name"]
+    for(let i = 0; i < array.length; i++){
+        if (array[i]["time"] < least){
+            least = array[i]["time"];
+            leastName = array[i]["name"];
+        }
+    }
+    return leastName;
+}
+console.log(leastTime(recipeArr));
+
+
+// question 9 & bonus
+const ingredients = (array) => {
+    let ingredArr = [];
+    for(let i = 0; i < array.length; i++){
+        if(!ingredArr[array[i]["ingredients"]]){
+            ingredArr.push(array[i]["ingredients"]);
+        }
+    }
+    return ingredArr;
+}
+console.log(ingredients(recipeArr));
+
+
+// question 10
+
+
 
 
