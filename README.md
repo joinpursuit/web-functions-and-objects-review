@@ -14,6 +14,7 @@ Input: 4,6
 Output: 5
 ```
 
+
 ## 2. Average of three numbers
 
 Write a function that takes in three numbers as input and returns their average
