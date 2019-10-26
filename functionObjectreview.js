@@ -187,3 +187,36 @@ return recipesName.filter((el,cur)=>recipesName.indexOf(el)===el)
 }
 
 console.log(items(recipes))
+console.log('QUESTION 10')
+let shoppingList = ['apples', 'pears', 'Cheese', 'Bread', 'wine', 'Milk', 'chicken', 'Eggs', 'Dry Bread'];
+
+const compareIngredients = (array, array2) => {
+  let purchases = [];
+  let ingredientForDinner = [];
+  let counter = 0;
+
+  for (let key in array2) {
+    for (let i = 0; i < array.length; i++) {
+      if (array2[key]['ingredients'].indexOf(array[i]) > -1) {
+        purchases.push(array[i]);
+      }
+    }
+
+    for (let i = 0; i < purchases.length; i++) {
+      if (array2[key]['ingredients'].indexOf(purchases[i]) > -1) {
+        counter++;
+      }
+    }
+
+    if (array2[key]['ingredients'].length === counter) {
+      ingredientForDinner.push(array2[key]['name']);
+    }
+
+    purchases = [];
+    counter = 0;
+  }
+
+  return ingredientForDinner;
+};
+
+console.log(compareIngredients(shoppingList));
