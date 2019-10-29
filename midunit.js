@@ -76,7 +76,7 @@
 // const newArray = (arr) => {
 //     return arr.join(" ")
 // }
-// console.log(typeof newArray(["It’s", "not", "a", "bug.", "It’s", "an", "undocumented", "feature!"]));
+// console.log( newArray(["It’s", "not", "a", "bug.", "It’s", "an", "undocumented", "feature!"]));
 
 
 // PROBLEM 8
