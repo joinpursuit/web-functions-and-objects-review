@@ -12,3 +12,14 @@ const avegOfThreeNum = (num1, num2, num3) => {
     return average
 }
 console.log(avegOfThreeNum(1, 3, 5))
+
+//3. Average of Array
+
+const averageArr = (arr) => {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i]
+    }
+    return sum / arr.length
+}
+console.log(averageArr([1, 2, 3, 4, 5, 10, 10]))
