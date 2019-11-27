@@ -51,3 +51,24 @@ const checkForPositiveNum = (arr) => {
     })
 }
 console.log(checkForPositiveNum([-4, 3, -2, 4]))
+
+// /* ##
+// 6. Lowercase all strings
+
+// Write a function that lowercases all strings in an array of strings.
+// Input: ["HELLO", "THERE", "THESE", "ARE", "SOME", "STRINGS"]
+// Output: ["hello", "there", "these", "are", "some", "strings"]
+// `
+// ``
+// BONUS:
+// -A.If you didn't, rewrite this using an array method with a callback
+// -B.Make it work even
+// if the array has mixed types inside so that input = `[1, 'HELLO', {one: 'uno'}]`
+// would give output = `['hello']`*/
+
+const lowerCaseStr = (arr) => {
+    return arr.map((el) => {
+        return el.toLowerCase();
+    })
+}
+console.log(lowerCaseStr(["HELLO", "THERE", "THESE", "ARE", "SOME", "STRINGS"]))
