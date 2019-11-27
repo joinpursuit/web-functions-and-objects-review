@@ -31,5 +31,23 @@ const removeEvenNum = (arr) => {
         return el % 2 === 0;
     })
 }
-
 console.log(removeEvenNum([1, 2, 3, 4, 5, 6]))
+
+/* 
+##
+5. Make sure each number is positive
+Write a function that checks to see whether every number in an array is positive.
+``
+`
+Input: [-4,3,-2,4]
+Output: false
+`
+``
+BONUS: If you didn't, rewrite this using an array method with a callback. */
+
+const checkForPositiveNum = (arr) => {
+    return arr.every((el) => {
+        return el >= 0;
+    })
+}
+console.log(checkForPositiveNum([-4, 3, -2, 4]))
