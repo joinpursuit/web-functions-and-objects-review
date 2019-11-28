@@ -1,6 +1,6 @@
 # Mid-Unit-1 Review Lab
 
-In this lab, we will review two key topics covered so far: Objects and Functions.  These are two vital topics for understanding JavaScript fundamentals, and will be used heavily as we build web apps in later units.
+In this lab, we will review two key topics covered so far: Objects and Functions. These are two vital topics for understanding JavaScript fundamentals, and will be used heavily as we build web apps in later units.
 
 
 ## Functions
